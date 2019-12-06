@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "26103520565",
+    "firebase_url": "https://notabtzero.firebaseio.com",
+    "project_id": "notabtzero",
+    "storage_bucket": "notabtzero.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26103520565:android:607b6f58402e0ca24c007c",
+        "android_client_info": {
+          "package_name": "com.edpcimdevelopment.notabtzero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26103520565-467r4muddh15ff1bh8e3sjijj4u1tvh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVC09k0A5hObB5m1PhG5xQvbLK27lzT6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26103520565-467r4muddh15ff1bh8e3sjijj4u1tvh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26103520565:android:b408f85711e46e0c4c007c",
+        "android_client_info": {
+          "package_name": "com.edpcimdevelopment.osmbtzero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26103520565-467r4muddh15ff1bh8e3sjijj4u1tvh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVC09k0A5hObB5m1PhG5xQvbLK27lzT6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26103520565-467r4muddh15ff1bh8e3sjijj4u1tvh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
