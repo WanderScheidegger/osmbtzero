@@ -1005,7 +1005,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
     //--------------------------------------------------------------------------
 
     //OBSERVAÇÕES
-    if (_isVisibleObs ) {
+    if (_isVisibleObs && _controllerObs.text.isEmpty) {
       setState(() {
         _preenchidos = _preenchidos + "- OBSERVAÇÕES -";
       });
@@ -2390,7 +2390,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
                                 children: <Widget>[
                                   Padding(
                                     padding: EdgeInsets.only(bottom: 15, top: 15),
-                                    child: _insertTextField(_controllerObs, "Observações"),
+                                    child: _insertTextFieldCPU(_controllerObs, "Observações"),
                                   ),
                                 ],
                               ),

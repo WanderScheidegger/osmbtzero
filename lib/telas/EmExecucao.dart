@@ -57,6 +57,8 @@ class _EmExecucaoState extends State<EmExecucao> {
           case ConnectionState.active:
           case ConnectionState.done:
             QuerySnapshot querySnapshot = snapshot.data;
+            print("tamanho" + querySnapshot.documents.length.toString());
+            var num = 0;
             if (querySnapshot.documents.length == 0) {
               return Card(
                 elevation: 8,
@@ -80,6 +82,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                 ),
               );
             } else {
+
               return Expanded(
                 child: ListView.separated(
                     separatorBuilder: (context, indice) => Divider(
@@ -93,8 +96,9 @@ class _EmExecucaoState extends State<EmExecucao> {
                           .where((snapshot) =>
                               snapshot.data['equipe'] == _equipeLogado)
                           .toList();
-
-                      if (ordens.length != 0){
+                      print("ordens:" + ordens.length.toString());
+                      num++;
+                      if (ordens.length != 0 && indice<ordens.length){
                         DocumentSnapshot item = ordens[indice];
 
                         Ordem ordem = Ordem();
@@ -118,6 +122,8 @@ class _EmExecucaoState extends State<EmExecucao> {
                         ordem.uidmod = "";
                         ordem.status = "Atribuída";
                         ordem.inicio = item['inicio'];
+
+                        print("indice" + indice.toString());
 
                         return Card(
                           elevation: 8,
@@ -191,32 +197,31 @@ class _EmExecucaoState extends State<EmExecucao> {
                             ],
                           ),
                         );
-                      }else{
-                        if (indice==0){
-                          return Card(
-                            elevation: 8,
-                            color: Color(0xffB5B6B3),
-                            borderOnForeground: true,
-                            child: Column(
-                              children: <Widget>[
-                                ListTile(
-                                  title: Text(
-                                    "Você não tem ordens em execução ou houve um erro no carregamento. "
-                                        "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontFamily: "EDP Preon",
-                                      fontSize: 12,
-                                      color: Color(0xff9E0616),
-                                    ),
+
+                      }else if(ordens.length==0 && num==1){
+                        return Card(
+                          elevation: 8,
+                          color: Color(0xffB5B6B3),
+                          borderOnForeground: true,
+                          child: Column(
+                            children: <Widget>[
+                              ListTile(
+                                title: Text(
+                                  "Você não tem ordens em execução ou houve um erro no carregamento. "
+                                      "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: "EDP Preon",
+                                    fontSize: 12,
+                                    color: Color(0xff9E0616),
                                   ),
                                 ),
-                              ],
-                            ),
-                          );
-                        }else{
-                          return null;
-                        }
+                              ),
+                            ],
+                          ),
+                        );
+                      } else{
+                        return null;
                       }
                     }),
               );
@@ -239,7 +244,7 @@ class _EmExecucaoState extends State<EmExecucao> {
       setState(() {
         _isSemEquipe = false;
       });
-    }else{
+    }else {
       setState(() {
         _isSemEquipe = true;
       });

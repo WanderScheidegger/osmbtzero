@@ -9,6 +9,7 @@ import 'package:osmbtzero/telas/UserMaterial.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:date_format/date_format.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -102,9 +103,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
       Firestore db = Firestore.instance;
       db.collection("localiza").document(_equipeLogado).
-      updateData({"latitude": position.latitude, "longitude": position.longitude})
+      updateData({"latitude": position.latitude, "longitude": position.longitude,
+        "time": formatDate(DateTime.now(), [dd, '/', mm, '/', yyyy, ' - ', H, ':', nn]).toString()})
           .then((onValue){
-        print("localizacao atual: " + position.toString() );
+        print("localizacao atual: " + position.toString());
       });
     });
 

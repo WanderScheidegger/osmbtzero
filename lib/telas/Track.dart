@@ -19,7 +19,7 @@ class _TrackState extends State<Track> {
 
   CameraPosition _posicaoCamera = CameraPosition(
     target: LatLng(-20.214375, -40.2708342),
-    zoom: 11,
+    zoom: 10.5,
   );
 
   _onMapCreated(GoogleMapController controller) {
@@ -47,7 +47,7 @@ class _TrackState extends State<Track> {
 
       if (this.mounted) {
         setState(() {
-          _posicaoCamera = CameraPosition(target: LatLng(lat, long), zoom: 11);
+          _posicaoCamera = CameraPosition(target: LatLng(lat, long), zoom: 10.5);
 
           var equipe1Pos = listaPosIni[0];
           var equipe2Pos = listaPosIni[1];
@@ -57,15 +57,15 @@ class _TrackState extends State<Track> {
 
           _movimentarCamera(_posicaoCamera);
           _exibirMarcador(
-              LatLng(equipe1Pos['latitude'], equipe1Pos['longitude']),
-              LatLng(equipe2Pos['latitude'], equipe2Pos['longitude']),
-              LatLng(equipe3Pos['latitude'], equipe3Pos['longitude']));
+              LatLng(equipe1Pos['latitude'], equipe1Pos['longitude']), equipe1Pos['time'],
+              LatLng(equipe2Pos['latitude'], equipe2Pos['longitude']), equipe2Pos['time'],
+              LatLng(equipe3Pos['latitude'], equipe3Pos['longitude']), equipe3Pos['time']);
         });
       }
     });
   }
 
-  _exibirMarcador(LatLng equipe1, LatLng equipe2, LatLng equipe3) async {
+  _exibirMarcador(LatLng equipe1, time1, LatLng equipe2, time2, LatLng equipe3, time3) async {
     double pixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     BitmapDescriptor.fromAssetImage(
@@ -75,7 +75,7 @@ class _TrackState extends State<Track> {
       Marker marcador1 = Marker(
           markerId: MarkerId("1"),
           position: equipe1,
-          infoWindow: InfoWindow(title: "Equipe 1"),
+          infoWindow: InfoWindow(title: "Equipe 1 - " + time1),
           icon: icone);
 
       setState(() {
@@ -85,7 +85,7 @@ class _TrackState extends State<Track> {
       Marker marcador2 = Marker(
           markerId: MarkerId("2"),
           position: equipe2,
-          infoWindow: InfoWindow(title: "Equipe 2"),
+          infoWindow: InfoWindow(title: "Equipe 2 - " + time2),
           icon: icone);
 
       setState(() {
@@ -95,7 +95,7 @@ class _TrackState extends State<Track> {
       Marker marcador3 = Marker(
           markerId: MarkerId("3"),
           position: equipe3,
-          infoWindow: InfoWindow(title: "Equipe 3"),
+          infoWindow: InfoWindow(title: "Equipe 3 - " + time3),
           icon: icone);
 
       setState(() {

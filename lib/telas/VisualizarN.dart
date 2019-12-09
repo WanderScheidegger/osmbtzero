@@ -15,6 +15,8 @@ class _VisualizarNState extends State<VisualizarN> {
   static String numero;
   var dados;
   bool _isLoading = false;
+  String nota = "";
+  var titles = [];
 
   //padrão de TextStyle
   _textStyle14() {
@@ -222,6 +224,30 @@ class _VisualizarNState extends State<VisualizarN> {
             Padding(
               padding: EdgeInsets.only(bottom: 10),
               child: Text(
+                "CPU de CP INST.: " + dados['cpu_cp_inst'],
+                style: TextStyle(
+                  fontFamily: "EDP Preon",
+                  fontSize: 11,
+                  color: Color(0xff9E0616),
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(bottom: 10),
+              child: Text(
+                "CPU de CP RET.: " + dados['cpu_cp_ret'],
+                style: TextStyle(
+                  fontFamily: "EDP Preon",
+                  fontSize: 11,
+                  color: Color(0xff9E0616),
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(bottom: 10),
+              child: Text(
                 "RADIO INST.: " + dados['radio_inst'],
                 style: TextStyle(
                   fontFamily: "EDP Preon",
@@ -365,11 +391,18 @@ class _VisualizarNState extends State<VisualizarN> {
 
   _buscarNota() async {
     db.collection("notas").document(numero).snapshots().listen((dataON) {
+      dataON.data.forEach((String id, dynamic value){
+        if (value != ""){
+          nota = nota + id + ": " + value + "\n";
+        }
+      });
       setState(() {
+        print("NOTA: " + nota);
         dados = dataON.data;
       });
       _isLoading = true;
     });
+
   }
 
   @override

@@ -55,6 +55,7 @@ class _ExecutadasState extends State<Executadas> {
           case ConnectionState.active:
           case ConnectionState.done:
             QuerySnapshot querySnapshot = snapshot.data;
+            var num = 0;
             if (querySnapshot.documents.length == 0) {
               return Card(
                 elevation: 8,
@@ -91,7 +92,9 @@ class _ExecutadasState extends State<Executadas> {
                           .where((snapshot) =>
                               snapshot.data['equipe'] == _equipeLogado)
                           .toList();
-                      if (ordens.length != 0) {
+
+                      num++;
+                      if (ordens.length != 0 && indice<ordens.length) {
                         DocumentSnapshot item = ordens[indice];
 
                         Ordem ordem = Ordem();
@@ -189,7 +192,7 @@ class _ExecutadasState extends State<Executadas> {
                             ],
                           ),
                         );
-                      } else {
+                      } else if(ordens.length==0 && num==1) {
                         return Card(
                           elevation: 8,
                           color: Color(0xffB5B6B3),
@@ -211,6 +214,8 @@ class _ExecutadasState extends State<Executadas> {
                             ],
                           ),
                         );
+                      } else{
+                        return null;
                       }
                     }),
               );

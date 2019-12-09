@@ -144,6 +144,8 @@ class _AexecutarState extends State<Aexecutar> {
           case ConnectionState.active:
           case ConnectionState.done:
             QuerySnapshot querySnapshot = snapshot.data;
+            print("tamanho" + querySnapshot.documents.length.toString());
+            var num = 0;
             if (querySnapshot.documents.length == 0) {
               return Card(
                 elevation: 8,
@@ -182,7 +184,9 @@ class _AexecutarState extends State<Aexecutar> {
                               snapshot.data['equipe'] == _equipeLogado)
                           .toList();
 
-                      if (ordens.length != 0){
+                      print("ordens:" + ordens.length.toString());
+                      num++;
+                      if (ordens.length != 0 && indice<ordens.length){
                         DocumentSnapshot item = ordens[indice];
 
                         Ordem ordem = Ordem();
@@ -207,6 +211,7 @@ class _AexecutarState extends State<Aexecutar> {
                         ordem.status = "Atribuída";
                         ordem.inicio = item['inicio'];
 
+                        print("indice" + indice.toString());
 
                         return Card(
                           elevation: 8,
@@ -296,8 +301,8 @@ class _AexecutarState extends State<Aexecutar> {
                             ],
                           ),
                         );
-                      }else {
-
+                      }
+                      else if(ordens.length==0 && num==1) {
                         return Card(
                           elevation: 8,
                           color: Color(0xffB5B6B3),
@@ -319,6 +324,9 @@ class _AexecutarState extends State<Aexecutar> {
                             ],
                           ),
                         );
+                      }
+                      else{
+                        return null;
                       }
                     }),
               );
