@@ -114,6 +114,14 @@ class _AdmCimState extends State<AdmCim> with SingleTickerProviderStateMixin {
             IconButton(
               iconSize: 30,
               color: Colors.white,
+              icon: Icon(Icons.note),
+              onPressed: () {
+                Navigator.pushNamed(context, "/relatorio");
+              },
+            ),
+            IconButton(
+              iconSize: 30,
+              color: Colors.white,
               icon: Icon(Icons.add_to_photos),
               onPressed: () {
                 Navigator.pushNamed(context, "/inicianota");
