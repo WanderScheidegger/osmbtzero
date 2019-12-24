@@ -473,7 +473,7 @@ class _AddMaterialState extends State<AddMaterial> {
                       _equipe,
                       style: _textStyle(14.0),
                     ),
-                    items: <String>['1', '2', "3"].map((String value) {
+                    items: <String>['1', '2', "3", "4"].map((String value) {
                       return new DropdownMenuItem<String>(
                         value: value,
                         child: new Text(

@@ -163,7 +163,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                             color: Color(0xff9E0616),
                           ),
                         ),
-                        items: <String>["Adm", '1', '2', '3']
+                        items: <String>["Adm", '1', '2', '3', '4']
                             .map((String value) {
                           return new DropdownMenuItem<String>(
                             value: value,

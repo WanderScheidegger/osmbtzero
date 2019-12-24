@@ -589,6 +589,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
     _retornaStrMateriais();
 
     Nota nota = Nota();
+    nota.eq_exec = _equipeLogado;
     nota.num_nota = widget.ordem.nun_osm;
     nota.data_realiza = formatDate(DateTime.now(), [dd, '/', mm, '/', yyyy]);
     nota.inicio = widget.ordem.inicio;

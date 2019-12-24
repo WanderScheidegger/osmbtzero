@@ -42,8 +42,8 @@ class _TrackState extends State<Track> {
         long = long + f['longitude'];
       });
 
-      lat = lat / 3.0;
-      long = long / 3.0;
+      lat = lat / 4.0;
+      long = long / 4.0;
 
       if (this.mounted) {
         setState(() {
@@ -52,6 +52,7 @@ class _TrackState extends State<Track> {
           var equipe1Pos = listaPosIni[0];
           var equipe2Pos = listaPosIni[1];
           var equipe3Pos = listaPosIni[2];
+          var equipe4Pos = listaPosIni[3];
 
           print("ww" + equipe3Pos.toString());
 
@@ -59,18 +60,20 @@ class _TrackState extends State<Track> {
           _exibirMarcador(
               LatLng(equipe1Pos['latitude'], equipe1Pos['longitude']), equipe1Pos['time'],
               LatLng(equipe2Pos['latitude'], equipe2Pos['longitude']), equipe2Pos['time'],
-              LatLng(equipe3Pos['latitude'], equipe3Pos['longitude']), equipe3Pos['time']);
+              LatLng(equipe3Pos['latitude'], equipe3Pos['longitude']), equipe3Pos['time'],
+              LatLng(equipe4Pos['latitude'], equipe4Pos['longitude']), equipe4Pos['time']
+          );
         });
       }
     });
   }
 
-  _exibirMarcador(LatLng equipe1, time1, LatLng equipe2, time2, LatLng equipe3, time3) async {
+  _exibirMarcador(LatLng equipe1, time1, LatLng equipe2, time2, LatLng equipe3, time3, LatLng equipe4, time4) async {
     double pixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     BitmapDescriptor.fromAssetImage(
-            ImageConfiguration(devicePixelRatio: pixelRatio),
-            "images/carro.png")
+        ImageConfiguration(devicePixelRatio: pixelRatio),
+        "images/carro.png")
         .then((BitmapDescriptor icone) {
       Marker marcador1 = Marker(
           markerId: MarkerId("1"),
@@ -101,6 +104,17 @@ class _TrackState extends State<Track> {
       setState(() {
         _marcadores[MarkerId("3")] = marcador3;
       });
+
+      Marker marcador4 = Marker(
+          markerId: MarkerId("4"),
+          position: equipe4,
+          infoWindow: InfoWindow(title: "Equipe 4 - " + time4),
+          icon: icone);
+
+      setState(() {
+        _marcadores[MarkerId("4")] = marcador4;
+      });
+
     });
   }
 

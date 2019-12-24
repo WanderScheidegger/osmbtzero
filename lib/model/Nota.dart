@@ -2,6 +2,7 @@ import 'dart:core';
 
 class Nota{
 
+  String _eq_exec;
   String _num_nota;
   String _data_realiza;
   String _inicio;
@@ -54,6 +55,7 @@ class Nota{
 
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {
+      "eq_exec" : this._eq_exec,
       "num_nota" : this._num_nota,
       "data_realiza": this._data_realiza,
       "inicio": this._inicio,
@@ -107,6 +109,12 @@ class Nota{
 
   Nota();
 
+
+  String get eq_exec => _eq_exec;
+
+  set eq_exec(String value) {
+    _eq_exec = value;
+  }
 
   String get cpu_cp_inst => _cpu_cp_inst;
 

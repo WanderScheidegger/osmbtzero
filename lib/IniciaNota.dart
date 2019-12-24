@@ -215,7 +215,7 @@ class _IniciaNotaState extends State<IniciaNota> {
                   padding: EdgeInsets.only(bottom: 10),
                   child: TextField(
                     controller: _controllerDataProg,
-                    keyboardType: TextInputType.datetime,
+                    keyboardType: TextInputType.text,
                     style: _textStyle11(),
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(15),
