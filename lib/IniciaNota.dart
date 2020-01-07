@@ -364,7 +364,8 @@ class _IniciaNotaState extends State<IniciaNota> {
                       _tipoManutencao,
                       style: _textStyle11(),
                     ),
-                    items: <String>['Normalizar CS', 'Troca de CPU', "Outros"]
+                    items: <String>['Normalizar CS', 'Normalizar IP', "Normalizar medidor", "Religa / ordem",
+                      "Inspeção", "Outros"]
                         .map((String value) {
                       return new DropdownMenuItem<String>(
                         value: value,
@@ -433,7 +434,7 @@ class _IniciaNotaState extends State<IniciaNota> {
                       _equipe,
                       style: _textStyle11(),
                     ),
-                    items: <String>['1', '2', "3"].map((String value) {
+                    items: <String>['1', '2', '3', '4'].map((String value) {
                       return new DropdownMenuItem<String>(
                         value: value,
                         child: new Text(

@@ -246,7 +246,7 @@ class _EditaNotaState extends State<EditaNota> {
                   padding: EdgeInsets.only(bottom: 10),
                   child: TextField(
                     controller: _controllerDataProg,
-                    keyboardType: TextInputType.datetime,
+                    keyboardType: TextInputType.text,
                     style: _textStyle11(),
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(15),
@@ -451,7 +451,8 @@ class _EditaNotaState extends State<EditaNota> {
                       widget.ordem.tipMan,
                       style: _textStyle11(),
                     ),
-                    items: <String>['Normalizar CS', 'Troca de CPU', "Outros"]
+                    items: <String>['Normalizar CS', 'Normalizar IP', "Normalizar medidor", "Religa / ordem",
+                      "Inspeção", "Outros"]
                         .map((String value) {
                       return new DropdownMenuItem<String>(
                         value: value,
@@ -521,7 +522,7 @@ class _EditaNotaState extends State<EditaNota> {
                       widget.ordem.equipe,
                       style: _textStyle11(),
                     ),
-                    items: <String>['1', '2', "3"].map((String value) {
+                    items: <String>['1', '2', "3", "4"].map((String value) {
                       return new DropdownMenuItem<String>(
                         value: value,
                         child: new Text(

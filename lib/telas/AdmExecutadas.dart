@@ -170,7 +170,7 @@ class _AdmExecutadasState extends State<AdmExecutadas> {
                                         borderRadius: BorderRadius.circular(6),
                                       ),
                                       onPressed: () {
-                                        Navigator.pushReplacementNamed(context, "/visualizan",
+                                        Navigator.pushReplacementNamed(context, "/visualizanadm",
                                             arguments: ordem);
                                       }),
                                 ],

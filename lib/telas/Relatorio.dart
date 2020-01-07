@@ -976,7 +976,7 @@ class _RelatorioState extends State<Relatorio> {
                             padding: EdgeInsets.only(bottom: 10),
                             child: TextField(
                               controller: _controllerDataInicial,
-                              keyboardType: TextInputType.datetime,
+                              keyboardType: TextInputType.text,
                               style: TextStyle(
                                 fontFamily: "EDP Preon",
                                 fontSize: 13,
@@ -997,7 +997,7 @@ class _RelatorioState extends State<Relatorio> {
                             padding: EdgeInsets.only(bottom: 10),
                             child: TextField(
                               controller: __controllerDataFinal,
-                              keyboardType: TextInputType.datetime,
+                              keyboardType: TextInputType.text,
                               style: TextStyle(
                                 fontFamily: "EDP Preon",
                                 fontSize: 13,

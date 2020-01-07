@@ -205,55 +205,55 @@ class _AddMaterialState extends State<AddMaterial> {
           db
               .collection("Equipe" + _equipe)
               .document("medidores")
-              .updateData({_controllerMedidor.text: _controllerMedidor.text});
+              .setData({_controllerMedidor.text: _controllerMedidor.text});
         }
         if (_controllerCpu.text.isNotEmpty) {
           db
               .collection("Equipe" + _equipe)
               .document("cpus")
-              .updateData({_controllerCpu.text: _controllerCpu.text});
+              .setData({_controllerCpu.text: _controllerCpu.text});
         }
         if (_controllerCpuCP.text.isNotEmpty) {
           db
               .collection("Equipe" + _equipe)
               .document("cpuscp")
-              .updateData({_controllerCpuCP.text: _controllerCpuCP.text});
+              .setData({_controllerCpuCP.text: _controllerCpuCP.text});
         }
         if (_controllerCp.text.isNotEmpty) {
           db
               .collection("Equipe" + _equipe)
               .document('cps')
-              .updateData({_controllerCp.text: _controllerCp.text});
+              .setData({_controllerCp.text: _controllerCp.text});
         }
         if (_controllerSsn.text.isNotEmpty) {
           db
               .collection("Equipe" + _equipe)
               .document('ssns')
-              .updateData({_controllerSsn.text: _controllerSsn.text});
+              .setData({_controllerSsn.text: _controllerSsn.text});
         }
         if (_controllerRemota.text.isNotEmpty) {
           db
               .collection("Equipe" + _equipe)
               .document('remotas')
-              .updateData({_controllerRemota.text: _controllerRemota.text});
+              .setData({_controllerRemota.text: _controllerRemota.text});
         }
         if (_controllerSensorIp.text.isNotEmpty) {
           db
               .collection("Equipe" + _equipe)
               .document('sensoresip')
-              .updateData({_controllerSensorIp.text: _controllerSensorIp.text});
+              .setData({_controllerSensorIp.text: _controllerSensorIp.text});
         }
         if (_controllerDisplay.text.isNotEmpty) {
           db
               .collection("Equipe" + _equipe)
               .document('displays')
-              .updateData({_controllerDisplay.text: _controllerDisplay.text});
+              .setData({_controllerDisplay.text: _controllerDisplay.text});
         }
         if (_controllerRadio.text.isNotEmpty) {
           db
               .collection("Equipe" + _equipe)
               .document('radios')
-              .updateData({_controllerRadio.text: _controllerRadio.text});
+              .setData({_controllerRadio.text: _controllerRadio.text});
         }
 
         pr.hide();

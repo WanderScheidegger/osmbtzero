@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:osmbtzero/model/Ordem.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EmExecucao extends StatefulWidget {
   @override
@@ -191,6 +193,23 @@ class _EmExecucaoState extends State<EmExecucao> {
                                               context, "/finalizanota",
                                               arguments: ordem);
                                         }),
+                                    RaisedButton(
+                                        child: Text(
+                                          "Rota",
+                                          style: TextStyle(
+                                            fontFamily: "EDP Preon",
+                                            fontSize: 9,
+                                            color: Color(0xffffffff),
+                                          ),
+                                        ),
+                                        color: Colors.yellow,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(6),
+                                        ),
+                                        onPressed: () {
+                                          //_displayDialog_Ok(context, item);
+                                          _openMaps(item);
+                                        }),
                                   ],
                                 ),
                               ),
@@ -249,6 +268,28 @@ class _EmExecucaoState extends State<EmExecucao> {
         _isSemEquipe = true;
       });
     }
+  }
+
+  static _openMaps(item){
+
+    Geolocator().getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high
+    ).then((Position position){
+
+     var Lat = position.latitude;
+     var Long = position.longitude;
+
+      launch(
+          "https://www.google.com.br/maps/dir/$Lat,$Long/" +
+              item['coordenada_x'] +
+              "," +
+              item['coordenada_y']);
+
+    }).timeout(Duration(seconds: 5), onTimeout: () {
+
+
+    });
+
   }
 
   @override
