@@ -344,6 +344,18 @@ class _VisualizarNState extends State<VisualizarN> {
             Padding(
               padding: EdgeInsets.only(bottom: 10),
               child: Text(
+                "Número de Clandestinas: " + dados['num_clandestinas'],
+                style: TextStyle(
+                  fontFamily: "EDP Preon",
+                  fontSize: 11,
+                  color: Color(0xff9E0616),
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(bottom: 10),
+              child: Text(
                 "Observ.: " + dados['obs'],
                 style: TextStyle(
                   fontFamily: "EDP Preon",
