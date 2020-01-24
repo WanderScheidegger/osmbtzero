@@ -5,6 +5,7 @@ import 'package:osmbtzero/model/Ordem.dart';
 import 'package:osmbtzero/telas/Aexecutar.dart';
 import 'package:osmbtzero/telas/EmExecucao.dart';
 import 'package:osmbtzero/telas/Executadas.dart';
+import 'package:osmbtzero/telas/Rota.dart';
 import 'package:osmbtzero/telas/UserMaterial.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter/services.dart';
@@ -18,7 +19,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   TabController _tabController;
-  List<String> itensMenu = ["Logout", "ADM"];
+  List<String> itensMenu = ["Logout", "Material", "ADM"];
   TextEditingController _dialogController = TextEditingController();
   String _textoAalerta = "Digite a senha de Administrador";
   Ordem ordem = Ordem();
@@ -30,9 +31,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       case "ADM":
         _displayDialog(context);
         break;
+      case "Material":
+        Navigator.pushNamedAndRemoveUntil(context, "/usermaterial", (_) => false);
+        break;
       case "Logout":
         _deslogarUsuario();
         break;
+
     }
   }
 
@@ -190,11 +195,22 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ),
             Tab(
               icon: Icon(
+                Icons.map,
+                size: 30,
+              ),
+              text: "Mapa",
+            ),
+            /*
+            Tab(
+              icon: Icon(
                 Icons.work,
                 size: 30,
               ),
               text: "Material",
             ),
+
+             */
+
           ],
         ),
         actions: <Widget>[
@@ -217,7 +233,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           Aexecutar(),
           EmExecucao(),
           Executadas(),
-          UserMaterial(),
+          Rota(),
+          //UserMaterial(),
         ],
       ),
     );

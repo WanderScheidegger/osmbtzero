@@ -61,6 +61,7 @@ flutter:
     - images/up.png
     - images/down.png
     - images/carro.png
+    - images/el_services.png
 
 
   fonts:
