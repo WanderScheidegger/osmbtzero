@@ -98,8 +98,40 @@ class _RelatorioState extends State<Relatorio> {
               _exibeEquiAtrib = _exibeEquiAtrib;
             });
 
+            _exibeEquiAtrib = _exibeEquiAtrib + "\nEQUIPE 5 \n \n";
+            db.collection("Equipe5").getDocuments().then((QuerySnapshot snapshot) {
+              snapshot.documents.forEach((f) {
+
+                _exibeEquiAtrib = _exibeEquiAtrib +
+                    f.documentID.toString().toUpperCase() +
+                    " :" +
+                    f.data.values.toString() +
+                    "\n";
+              });
+
+              setState(() {
+                _exibeEquiAtrib = _exibeEquiAtrib;
+              });
 
 
+              _exibeEquiAtrib = _exibeEquiAtrib + "\nEQUIPE 6 \n \n";
+              db.collection("Equipe6").getDocuments().then((QuerySnapshot snapshot) {
+                snapshot.documents.forEach((f) {
+
+                  _exibeEquiAtrib = _exibeEquiAtrib +
+                      f.documentID.toString().toUpperCase() +
+                      " :" +
+                      f.data.values.toString() +
+                      "\n";
+                });
+
+                setState(() {
+                  _exibeEquiAtrib = _exibeEquiAtrib;
+                });
+
+
+              });//then6
+            });//then5
           });//then4
         });//then3
       });//then2
@@ -955,7 +987,7 @@ class _RelatorioState extends State<Relatorio> {
                                 _equipe,
                                 style: _textStyle(13.0),
                               ),
-                              items: <String>["Equipe 1", "Equipe 2", "Equipe 3", "Equipe 4", "Todas as equipes"]
+                              items: <String>["Equipe 1", "Equipe 2", "Equipe 3", "Equipe 4", "Equipe 5", "Equipe 6", "Todas as equipes"]
                                   .map((String value) {
                                 return new DropdownMenuItem<String>(
                                   value: value,

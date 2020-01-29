@@ -160,6 +160,23 @@ class _RotaState extends State<Rota> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Mapa das OSM",
+          style: TextStyle(
+            fontFamily: "EDP Preon",
+            fontSize: 18,
+            color: Color(0xffffffff),
+          ),
+        ),
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pushNamedAndRemoveUntil(context, "/home", (_) => false);
+          },
+        ),
+        backgroundColor: Color(0xffEE162D),
+      ),
       body: Container(
         child: Stack(
           children: <Widget>[

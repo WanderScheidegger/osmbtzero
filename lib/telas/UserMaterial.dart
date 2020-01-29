@@ -207,23 +207,6 @@ class _UserMaterialState extends State<UserMaterial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Material",
-          style: TextStyle(
-            fontFamily: "EDP Preon",
-            fontSize: 18,
-            color: Color(0xffffffff),
-          ),
-        ),
-        leading: new IconButton(
-          icon: new Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pushNamedAndRemoveUntil(context, "/home", (_) => false);
-          },
-        ),
-        backgroundColor: Color(0xffEE162D),
-      ),
       body: Container(
         decoration: BoxDecoration(color: Color(0xffffffff)),
         padding: EdgeInsets.all(10),

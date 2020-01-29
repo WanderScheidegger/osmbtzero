@@ -8,6 +8,7 @@ import 'package:osmbtzero/IniciaNota.dart';
 import 'package:osmbtzero/ModificaUsuario.dart';
 import 'package:osmbtzero/telas/LoadPage.dart';
 import 'package:osmbtzero/telas/Relatorio.dart';
+import 'package:osmbtzero/telas/Rota.dart';
 import 'package:osmbtzero/telas/SeeOrder.dart';
 import 'package:osmbtzero/telas/Track.dart';
 import 'package:osmbtzero/telas/UserMaterial.dart';
@@ -45,8 +46,8 @@ class RouteGenerator{
         return MaterialPageRoute(builder: (_) => SeeOrder(args));
       case "/addmaterial":
         return MaterialPageRoute(builder: (_) => AddMaterial());
-      case "/usermaterial":
-        return MaterialPageRoute(builder: (_) => UserMaterial());
+      case "/rota":
+        return MaterialPageRoute(builder: (_) => Rota());
       case "/track":
         return MaterialPageRoute(builder: (_) => Track());
       case "/relatorio":

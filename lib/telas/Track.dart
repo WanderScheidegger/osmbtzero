@@ -19,7 +19,7 @@ class _TrackState extends State<Track> {
 
   CameraPosition _posicaoCamera = CameraPosition(
     target: LatLng(-20.214375, -40.2708342),
-    zoom: 10.5,
+    zoom: 9.8,
   );
 
   _onMapCreated(GoogleMapController controller) {
@@ -42,17 +42,19 @@ class _TrackState extends State<Track> {
         long = long + f['longitude'];
       });
 
-      lat = lat / 4.0;
-      long = long / 4.0;
+      lat = lat / 6.0;
+      long = long / 6.0;
 
       if (this.mounted) {
         setState(() {
-          _posicaoCamera = CameraPosition(target: LatLng(lat, long), zoom: 10.5);
+          _posicaoCamera = CameraPosition(target: LatLng(lat, long), zoom: 9.8);
 
           var equipe1Pos = listaPosIni[0];
           var equipe2Pos = listaPosIni[1];
           var equipe3Pos = listaPosIni[2];
           var equipe4Pos = listaPosIni[3];
+          var equipe5Pos = listaPosIni[4];
+          var equipe6Pos = listaPosIni[5];
 
           print("ww" + equipe3Pos.toString());
 
@@ -61,14 +63,19 @@ class _TrackState extends State<Track> {
               LatLng(equipe1Pos['latitude'], equipe1Pos['longitude']), equipe1Pos['time'],
               LatLng(equipe2Pos['latitude'], equipe2Pos['longitude']), equipe2Pos['time'],
               LatLng(equipe3Pos['latitude'], equipe3Pos['longitude']), equipe3Pos['time'],
-              LatLng(equipe4Pos['latitude'], equipe4Pos['longitude']), equipe4Pos['time']
+              LatLng(equipe4Pos['latitude'], equipe4Pos['longitude']), equipe4Pos['time'],
+              LatLng(equipe5Pos['latitude'], equipe5Pos['longitude']), equipe5Pos['time'],
+              LatLng(equipe6Pos['latitude'], equipe6Pos['longitude']), equipe6Pos['time']
           );
         });
       }
     });
   }
 
-  _exibirMarcador(LatLng equipe1, time1, LatLng equipe2, time2, LatLng equipe3, time3, LatLng equipe4, time4) async {
+  _exibirMarcador(LatLng equipe1, time1, LatLng equipe2, time2,
+      LatLng equipe3, time3, LatLng equipe4, time4,
+      LatLng equipe5, time5,  LatLng equipe6, time6) async {
+
     double pixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     BitmapDescriptor.fromAssetImage(
@@ -113,6 +120,26 @@ class _TrackState extends State<Track> {
 
       setState(() {
         _marcadores[MarkerId("4")] = marcador4;
+      });
+
+      Marker marcador5 = Marker(
+          markerId: MarkerId("5"),
+          position: equipe5,
+          infoWindow: InfoWindow(title: "Equipe 5 - " + time5),
+          icon: icone);
+
+      setState(() {
+        _marcadores[MarkerId("5")] = marcador5;
+      });
+
+      Marker marcador6 = Marker(
+          markerId: MarkerId("6"),
+          position: equipe6,
+          infoWindow: InfoWindow(title: "Equipe 6 - " + time6),
+          icon: icone);
+
+      setState(() {
+        _marcadores[MarkerId("6")] = marcador6;
       });
 
     });
