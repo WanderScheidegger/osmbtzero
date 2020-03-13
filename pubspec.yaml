@@ -65,7 +65,7 @@ flutter:
 
 
   fonts:
-    - family: EDP Preon
+    - family: EDPPreon
       fonts:
         - asset: fonts/EDP Preon Regular.otf
 

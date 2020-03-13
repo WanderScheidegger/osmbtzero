@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:osmbtzero/model/back.dart';
 import 'package:osmbtzero/telas/AdmAexecutar.dart';
 import 'package:osmbtzero/telas/AdmEmExecucao.dart';
 import 'package:osmbtzero/telas/AdmExecutadas.dart';
@@ -86,7 +87,8 @@ class _AdmCimState extends State<AdmCim> with SingleTickerProviderStateMixin {
           People(),
           AdmAexecutar(),
           AdmEmExecucao(),
-          AdmExecutadas(),
+          //AdmExecutadas(),
+          back(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
