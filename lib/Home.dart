@@ -100,7 +100,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     var geolocator = Geolocator();
     var locationOptions = LocationOptions(
         accuracy: LocationAccuracy.high,
-        timeInterval: 60000,
+        timeInterval: 180000,
     );
     geolocator.getPositionStream( locationOptions )
         .listen((Position position){
