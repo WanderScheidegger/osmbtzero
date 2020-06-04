@@ -60,7 +60,7 @@ class _LoginState extends State<Login> {
       Navigator.pushNamedAndRemoveUntil(context, "/loadpage", (_) => false);
     }).catchError((error) {
       setState(() {
-        print("erro app: " + error.toString());
+        //print("erro app: " + error.toString());
         _mensagemErro =
         "Erro ao autenticar. Verifique o e-mail e a senha e tente novamente.";
         _number = 20.0;
@@ -94,7 +94,7 @@ class _LoginState extends State<Login> {
         "Centro Integrado de Medição",
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontFamily: "EDP Preon",
+          fontFamily: "EDPPreon",
           fontSize: 15,
           color: Color(0xff9E0616),
         ),
@@ -130,7 +130,7 @@ class _LoginState extends State<Login> {
                     "Controle de Ordens - BtZero",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 19,
                       color: Color(0xff9E0616),
                     ),
@@ -155,7 +155,7 @@ class _LoginState extends State<Login> {
                     controller: _controllerEmail,
                     keyboardType: TextInputType.emailAddress,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 16,
                       color: Color(0xff9E0616),
                     ),
@@ -175,7 +175,7 @@ class _LoginState extends State<Login> {
                   obscureText: true,
                   keyboardType: TextInputType.text,
                   style: TextStyle(
-                    fontFamily: "EDP Preon",
+                    fontFamily: "EDPPreon",
                     fontSize: 16,
                     color: Color(0xff9E0616),
                   ),
@@ -195,7 +195,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         "Entrar",
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 17,
                           color: Color(0xffffffff),
                         ),
@@ -214,7 +214,7 @@ class _LoginState extends State<Login> {
                     child: Text(
                       "Sem cadastro? clique aqui!",
                       style: TextStyle(
-                        fontFamily: "EDP Preon",
+                        fontFamily: "EDPPreon",
                         fontSize: 16,
                         color: Color(0xff9E0616),
                       ),
@@ -230,7 +230,7 @@ class _LoginState extends State<Login> {
                     child: Text(
                       _mensagemErro,
                       style: TextStyle(
-                        fontFamily: "EDP Preon",
+                        fontFamily: "EDPPreon",
                         fontSize: _fontSizeField,
                         color: Color(0xff9E0616),
                       ),

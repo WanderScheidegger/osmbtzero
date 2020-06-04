@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:osmbtzero/model/Exec_picker.dart';
 import 'package:osmbtzero/model/Ordem.dart';
 import 'package:osmbtzero/telas/Aexecutar.dart';
 import 'package:osmbtzero/telas/EmExecucao.dart';
@@ -110,7 +111,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       updateData({"latitude": position.latitude, "longitude": position.longitude,
         "time": formatDate(DateTime.now(), [dd, '/', mm, '/', yyyy, ' - ', H, ':', nn]).toString()})
           .then((onValue){
-        print("localizacao atual: " + position.toString());
+        //print("localizacao atual: " + position.toString());
       });
     });
 
@@ -151,7 +152,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         title: Text(
           "Manutenção - OSM",
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),
@@ -166,7 +167,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           indicatorColor: Colors.white,
           labelColor: Color(0xffffffff),
           labelStyle: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 7,
           ),
           //controller: _tabController,
@@ -221,7 +222,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         children: <Widget>[
           Aexecutar(),
           EmExecucao(),
-          Executadas(),
+          ExecPicker(),
           UserMaterial(),
         ],
       ),

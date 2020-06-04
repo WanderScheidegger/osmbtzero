@@ -266,7 +266,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
       });
 
     }).catchError((onError) {
-      print("Erro ao carregar os materiais." + onError.toString());
+      //print("Erro ao carregar os materiais." + onError.toString());
     });
   }
 
@@ -278,7 +278,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
         .then((QuerySnapshot snapshot){
       snapshot.documents.forEach((f){
         if (f.documentID == _equipeLogado) {
-          print("DDDDD:" + f.data.toString());
+          //print("DDDDD:" + f.data.toString());
           _materiaisCons.addAll(f.data);
         }
 
@@ -295,7 +295,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
         .then((QuerySnapshot snapshot){
       snapshot.documents.forEach((f){
         if (f.documentID == _equipeLogado) {
-          print("DDDDD:" + f.data.toString());
+          //print("DDDDD:" + f.data.toString());
           _materiaisAtrib.addAll(f.data);
         }
 
@@ -328,7 +328,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
   //padrão de TextStyle
   _textStyle14() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 14,
       color: Color(0xff9E0616),
     );
@@ -337,7 +337,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
   //padrão de TextStyle
   _textStyle12() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 12,
       color: Color(0xff9E0616),
     );
@@ -345,7 +345,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
 
   _textStyle11() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 11,
       color: Color(0xff9E0616),
     );
@@ -426,7 +426,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
       "cintab": _materiaisAtrib['cintab'] - cintab
     };
 
-    print("DDD: " + dadosCons.toString());
+    //print("DDD: " + dadosCons.toString());
 
     Firestore db = Firestore.instance;
     db
@@ -434,14 +434,14 @@ class _FinalizaNotaState extends State<FinalizaNota> {
         .document(_equipeLogado)
         .updateData(dadosCons)
         .then((onValue){
-        print("DDDD: " + dadosCons.toString());
+        //print("DDDD: " + dadosCons.toString());
 
         db
             .collection("materiais_atribuidos")
             .document(_equipeLogado)
             .updateData(dadosAtrib)
             .then((onValue){
-          print("DDDD: " + dadosAtrib.toString());
+          //print("DDDD: " + dadosAtrib.toString());
 
         });//then
 
@@ -1143,7 +1143,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
         title: Text(
           "Finalizar OSM nº " + widget.ordem.nun_osm,
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),
@@ -3332,7 +3332,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
                             child: Text(
                               "Finalizar nota",
                               style: TextStyle(
-                                fontFamily: "EDP Preon",
+                                fontFamily: "EDPPreon",
                                 fontSize: 15,
                                 color: Color(0xffffffff),
                               ),

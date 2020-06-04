@@ -85,7 +85,7 @@ class _CadastroState extends State<Cadastro> {
   //padrão de TextStyle
   _textStyle14() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 14,
       color: Color(0xff9E0616),
     );
@@ -94,7 +94,7 @@ class _CadastroState extends State<Cadastro> {
   //padrão de TextStyle
   _textStyle12() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 12,
       color: Color(0xff9E0616),
     );
@@ -165,7 +165,7 @@ class _CadastroState extends State<Cadastro> {
         title: Text(
           "Cadastro",
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 18,
             color: Color(0xffffffff),
           ),
@@ -198,7 +198,7 @@ class _CadastroState extends State<Cadastro> {
                     controller: _controllerNome,
                     keyboardType: TextInputType.text,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: _fontSizeField,
                       color: Color(0xff9E0616),
                     ),
@@ -219,7 +219,7 @@ class _CadastroState extends State<Cadastro> {
                     controller: _controllerSobrenome,
                     keyboardType: TextInputType.text,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: _fontSizeField,
                       color: Color(0xff9E0616),
                     ),
@@ -240,7 +240,7 @@ class _CadastroState extends State<Cadastro> {
                     controller: _controllerMatricula,
                     keyboardType: TextInputType.number,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: _fontSizeField,
                       color: Color(0xff9E0616),
                     ),
@@ -261,7 +261,7 @@ class _CadastroState extends State<Cadastro> {
                     controller: _controllerEmail,
                     keyboardType: TextInputType.emailAddress,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: _fontSizeField,
                       color: Color(0xff9E0616),
                     ),
@@ -281,7 +281,7 @@ class _CadastroState extends State<Cadastro> {
                   obscureText: true,
                   keyboardType: TextInputType.text,
                   style: TextStyle(
-                    fontFamily: "EDP Preon",
+                    fontFamily: "EDPPreon",
                     fontSize: _fontSizeField,
                     color: Color(0xff9E0616),
                   ),
@@ -301,7 +301,7 @@ class _CadastroState extends State<Cadastro> {
                       child: Text(
                         "Cadastrar",
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 17,
                           color: Color(0xffffffff),
                         ),
@@ -319,7 +319,7 @@ class _CadastroState extends State<Cadastro> {
                   child: Text(
                     _mensagemErro,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: _fontSizeField,
                       color: Color(0xff9E0616),
                     ),

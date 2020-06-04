@@ -27,7 +27,7 @@ class _ExecutadasState extends State<Executadas> {
                 "Você não tem conexão com a internet.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 12,
                   color: Color(0xff9E0616),
                 ),
@@ -41,7 +41,7 @@ class _ExecutadasState extends State<Executadas> {
                   Text(
                     "Carregando as ordens...",
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 12,
                       color: Color(0xff9E0616),
                     ),
@@ -68,7 +68,7 @@ class _ExecutadasState extends State<Executadas> {
                         "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 12,
                           color: Color(0xff9E0616),
                         ),
@@ -128,7 +128,7 @@ class _ExecutadasState extends State<Executadas> {
                                 title: Text(
                                   "OSM: " + item['numero_ordem'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -145,7 +145,7 @@ class _ExecutadasState extends State<Executadas> {
                                       "Tipo: " +
                                       item['tipo_manutencao'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -157,7 +157,7 @@ class _ExecutadasState extends State<Executadas> {
                                       "Sit: " +
                                       item['status'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 10,
                                     color: Color(0xffEE162D),
                                   ),
@@ -170,7 +170,7 @@ class _ExecutadasState extends State<Executadas> {
                                         child: Text(
                                           "Visualizar",
                                           style: TextStyle(
-                                            fontFamily: "EDP Preon",
+                                            fontFamily: "EDPPreon",
                                             fontSize: 9,
                                             color: Color(0xffffffff),
                                           ),
@@ -204,7 +204,7 @@ class _ExecutadasState extends State<Executadas> {
                                   "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -270,7 +270,7 @@ class _ExecutadasState extends State<Executadas> {
                       "Você ainda não foi atribuído a uma equipe. Por favor, entre em contato com a administração.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontFamily: "EDP Preon",
+                        fontFamily: "EDPPreon",
                         fontSize: 12,
                         color: Color(0xff9E0616),
                       ),

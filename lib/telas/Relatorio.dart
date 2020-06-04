@@ -41,7 +41,7 @@ class _RelatorioState extends State<Relatorio> {
   //padrão de TextStyle
   _textStyle(double size) {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: size,
       color: Color(0xff9E0616),
     );
@@ -427,7 +427,7 @@ class _RelatorioState extends State<Relatorio> {
 
 
         }else if (equipe.split(' ')[1] == 'as'){
-          print("entrou em todas");
+          //print("entrou em todas");
 
           _material_ramal += double.tryParse(dados['ramal']);
           _material_caboip += double.tryParse(dados['caboip']);
@@ -652,7 +652,7 @@ class _RelatorioState extends State<Relatorio> {
         title: Text(
           "Relatórios",
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),
@@ -724,7 +724,7 @@ class _RelatorioState extends State<Relatorio> {
                                 child: Text(
                                   "Carregar",
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 13,
                                     color: Color(0xffffffff),
                                   ),
@@ -778,7 +778,7 @@ class _RelatorioState extends State<Relatorio> {
                                 child: Text(
                                   "Carregar",
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 13,
                                     color: Color(0xffffffff),
                                   ),
@@ -831,7 +831,7 @@ class _RelatorioState extends State<Relatorio> {
                                 child: Text(
                                   "Carregar",
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 13,
                                     color: Color(0xffffffff),
                                   ),
@@ -884,7 +884,7 @@ class _RelatorioState extends State<Relatorio> {
                                 child: Text(
                                   "Carregar",
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 13,
                                     color: Color(0xffffffff),
                                   ),
@@ -1010,7 +1010,7 @@ class _RelatorioState extends State<Relatorio> {
                               controller: _controllerDataInicial,
                               keyboardType: TextInputType.text,
                               style: TextStyle(
-                                fontFamily: "EDP Preon",
+                                fontFamily: "EDPPreon",
                                 fontSize: 13,
                                 color: Color(0xff9E0616),
                               ),
@@ -1031,7 +1031,7 @@ class _RelatorioState extends State<Relatorio> {
                               controller: __controllerDataFinal,
                               keyboardType: TextInputType.text,
                               style: TextStyle(
-                                fontFamily: "EDP Preon",
+                                fontFamily: "EDPPreon",
                                 fontSize: 13,
                                 color: Color(0xff9E0616),
                               ),
@@ -1052,7 +1052,7 @@ class _RelatorioState extends State<Relatorio> {
                                 child: Text(
                                   "Carregar",
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 13,
                                     color: Color(0xffffffff),
                                   ),

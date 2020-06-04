@@ -82,7 +82,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
         title: Text(
           widget.usuario.nome,
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),
@@ -106,7 +106,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                     "Sobrenome: " + widget.usuario.sobrenome,
                     textAlign: TextAlign.left,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 14,
                       color: Color(0xff9E0616),
                     ),
@@ -118,7 +118,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                     "Matrícula: " + widget.usuario.matricula,
                     textAlign: TextAlign.left,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 14,
                       color: Color(0xff9E0616),
                     ),
@@ -130,7 +130,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                     "E-mail: " + widget.usuario.email,
                     textAlign: TextAlign.left,
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 14,
                       color: Color(0xff9E0616),
                     ),
@@ -144,7 +144,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                         "Equipe: ",
                         textAlign: TextAlign.left,
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 14,
                           color: Color(0xff9E0616),
                         ),
@@ -158,7 +158,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                         hint: Text(
                           widget.usuario.equipe,
                           style: TextStyle(
-                            fontFamily: "EDP Preon",
+                            fontFamily: "EDPPreon",
                             fontSize: 14,
                             color: Color(0xff9E0616),
                           ),
@@ -170,7 +170,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                             child: new Text(
                               value,
                               style: TextStyle(
-                                fontFamily: "EDP Preon",
+                                fontFamily: "EDPPreon",
                                 fontSize: 14,
                                 color: Color(0xff9E0616),
                               ),
@@ -195,7 +195,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                         "ADM: ",
                         textAlign: TextAlign.left,
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 14,
                           color: Color(0xff9E0616),
                         ),
@@ -209,7 +209,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                         hint: Text(
                           widget.usuario.adm,
                           style: TextStyle(
-                            fontFamily: "EDP Preon",
+                            fontFamily: "EDPPreon",
                             fontSize: 14,
                             color: Color(0xff9E0616),
                           ),
@@ -221,7 +221,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                             child: new Text(
                               value,
                               style: TextStyle(
-                                fontFamily: "EDP Preon",
+                                fontFamily: "EDPPreon",
                                 fontSize: 14,
                                 color: Color(0xff9E0616),
                               ),
@@ -247,7 +247,7 @@ class _ModificaUsuarioState extends State<ModificaUsuario> {
                           child: Text(
                             "Atribuir",
                             style: TextStyle(
-                              fontFamily: "EDP Preon",
+                              fontFamily: "EDPPreon",
                               fontSize: 15,
                               color: Color(0xffffffff),
                             ),

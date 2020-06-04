@@ -32,7 +32,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                 "Você não tem conexão com a internet.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 12,
                   color: Color(0xff9E0616),
                 ),
@@ -46,7 +46,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                   Text(
                     "Carregando as ordens...",
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 12,
                       color: Color(0xff9E0616),
                     ),
@@ -59,7 +59,7 @@ class _EmExecucaoState extends State<EmExecucao> {
           case ConnectionState.active:
           case ConnectionState.done:
             QuerySnapshot querySnapshot = snapshot.data;
-            print("tamanho" + querySnapshot.documents.length.toString());
+            //print("tamanho" + querySnapshot.documents.length.toString());
             var num = 0;
             if (querySnapshot.documents.length == 0) {
               return Card(
@@ -74,7 +74,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                         "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 12,
                           color: Color(0xff9E0616),
                         ),
@@ -98,7 +98,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                           .where((snapshot) =>
                               snapshot.data['equipe'] == _equipeLogado)
                           .toList();
-                      print("ordens:" + ordens.length.toString());
+                      //print("ordens:" + ordens.length.toString());
                       num++;
                       if (ordens.length != 0 && indice<ordens.length){
                         DocumentSnapshot item = ordens[indice];
@@ -125,7 +125,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                         ordem.status = "Atribuída";
                         ordem.inicio = item['inicio'];
 
-                        print("indice" + indice.toString());
+                        //print("indice" + indice.toString());
 
                         return Card(
                           elevation: 8,
@@ -137,7 +137,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                                 title: Text(
                                   "OSM: " + item['numero_ordem'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -154,7 +154,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                                       "Tipo: " +
                                       item['tipo_manutencao'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -166,7 +166,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                                       "Início: " +
                                       item['inicio'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 10,
                                     color: Color(0xffEE162D),
                                   ),
@@ -179,7 +179,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                                         child: Text(
                                           "Finalizar a ordem",
                                           style: TextStyle(
-                                            fontFamily: "EDP Preon",
+                                            fontFamily: "EDPPreon",
                                             fontSize: 9,
                                             color: Color(0xffffffff),
                                           ),
@@ -197,7 +197,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                                         child: Text(
                                           "Rota",
                                           style: TextStyle(
-                                            fontFamily: "EDP Preon",
+                                            fontFamily: "EDPPreon",
                                             fontSize: 9,
                                             color: Color(0xffffffff),
                                           ),
@@ -230,7 +230,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                                       "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -318,7 +318,7 @@ class _EmExecucaoState extends State<EmExecucao> {
                       "Você ainda não foi atribuído a uma equipe. Por favor, entre em contato com a administração.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontFamily: "EDP Preon",
+                        fontFamily: "EDPPreon",
                         fontSize: 12,
                         color: Color(0xff9E0616),
                       ),

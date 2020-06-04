@@ -22,7 +22,7 @@ class _AdmAexecutarState extends State<AdmAexecutar> {
             title: Text(
               "Tem certeza que deseja deletar a ordem? Todos os dados serão perdidos",
               style: TextStyle(
-                fontFamily: "EDP Preon",
+                fontFamily: "EDPPreon",
                 fontSize: 12,
                 color: Color(0xff9E0616),
               ),
@@ -67,7 +67,7 @@ class _AdmAexecutarState extends State<AdmAexecutar> {
                   Text(
                       "Carregando as ordens...",
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 12,
                       color: Color(0xff9E0616),
                     ),
@@ -93,7 +93,7 @@ class _AdmAexecutarState extends State<AdmAexecutar> {
                             "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 12,
                           color: Color(0xff9E0616),
                         ),
@@ -147,7 +147,7 @@ class _AdmAexecutarState extends State<AdmAexecutar> {
                               title: Text(
                                 "OSM: " + item['numero_ordem'],
                                 style: TextStyle(
-                                  fontFamily: "EDP Preon",
+                                  fontFamily: "EDPPreon",
                                   fontSize: 12,
                                   color: Color(0xff9E0616),
                                 ),
@@ -164,7 +164,7 @@ class _AdmAexecutarState extends State<AdmAexecutar> {
                                     "Tipo: " +
                                     item['tipo_manutencao'],
                                 style: TextStyle(
-                                  fontFamily: "EDP Preon",
+                                  fontFamily: "EDPPreon",
                                   fontSize: 12,
                                   color: Color(0xff9E0616),
                                 ),
@@ -174,7 +174,7 @@ class _AdmAexecutarState extends State<AdmAexecutar> {
                                 "\n" +
                                 "Sit: " + item['status'],
                                 style: TextStyle(
-                                  fontFamily: "EDP Preon",
+                                  fontFamily: "EDPPreon",
                                   fontSize: 10,
                                   color: Color(0xffEE162D),
                                 ),
@@ -187,7 +187,7 @@ class _AdmAexecutarState extends State<AdmAexecutar> {
                                       child: Text(
                                         "Editar",
                                         style: TextStyle(
-                                          fontFamily: "EDP Preon",
+                                          fontFamily: "EDPPreon",
                                           fontSize: 9,
                                           color: Color(0xffffffff),
                                         ),
@@ -204,7 +204,7 @@ class _AdmAexecutarState extends State<AdmAexecutar> {
                                       child: Text(
                                         "Deletar",
                                         style: TextStyle(
-                                          fontFamily: "EDP Preon",
+                                          fontFamily: "EDPPreon",
                                           fontSize: 9,
                                           color: Color(0xffffffff),
                                         ),

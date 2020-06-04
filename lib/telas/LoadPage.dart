@@ -78,7 +78,7 @@ class _LoadPageState extends State<LoadPage> {
   //padrão de TextStyle
   _textStyle(double size) {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: size,
       color: Color(0xff9E0616),
     );

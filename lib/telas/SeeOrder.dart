@@ -19,7 +19,7 @@ class _SeeOrderState extends State<SeeOrder> {
   //padrão de TextStyle
   _textStyle14() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 14,
       color: Color(0xff9E0616),
     );
@@ -28,7 +28,7 @@ class _SeeOrderState extends State<SeeOrder> {
   //padrão de TextStyle
   _textStyle12() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 12,
       color: Color(0xff9E0616),
     );
@@ -36,7 +36,7 @@ class _SeeOrderState extends State<SeeOrder> {
 
   _textStyle11() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 11,
       color: Color(0xff9E0616),
     );
@@ -49,7 +49,7 @@ class _SeeOrderState extends State<SeeOrder> {
           title: Text(
             "OSM nº " + widget.ordem.nun_osm,
             style: TextStyle(
-              fontFamily: "EDP Preon",
+              fontFamily: "EDPPreon",
               fontSize: 20,
               color: Color(0xffffffff),
             ),

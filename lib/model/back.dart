@@ -35,7 +35,7 @@ class _backState extends State<back> {
                 "Você não tem conexão com a internet.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 12,
                   color: Color(0xff9E0616),
                 ),
@@ -49,7 +49,7 @@ class _backState extends State<back> {
                   Text(
                     "Carregando as ordens...",
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 12,
                       color: Color(0xff9E0616),
                     ),
@@ -62,7 +62,7 @@ class _backState extends State<back> {
           case ConnectionState.active:
           case ConnectionState.done:
             QuerySnapshot querySnapshot = snapshot.data;
-            print("tamanho" + querySnapshot.documents.length.toString());
+            //print("tamanho" + querySnapshot.documents.length.toString());
             var num = 0;
             if (querySnapshot.documents.length == 0) {
               return Card(
@@ -73,11 +73,10 @@ class _backState extends State<back> {
                   children: <Widget>[
                     ListTile(
                       title: Text(
-                        "Você não tem ordens a executar ou houve um erro no carregamento. "
-                            "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
+                        "Nenhuma ordem finalizada foi programada para esta data.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 12,
                           color: Color(0xff9E0616),
                         ),
@@ -102,7 +101,7 @@ class _backState extends State<back> {
                       snapshot.data['data_programacao'] == _dataShow)
                           .toList();
 
-                      print("ordens:" + ordens.length.toString());
+                      //print("ordens:" + ordens.length.toString());
                       num++;
                       if (ordens.length != 0 && indice<ordens.length){
                         DocumentSnapshot item = ordens[indice];
@@ -129,7 +128,7 @@ class _backState extends State<back> {
                         ordem.status = "Atribuída";
                         ordem.inicio = item['inicio'];
 
-                        print("indice" + indice.toString());
+                        //print("indice" + indice.toString());
 
                         return Card(
                           elevation: 8,
@@ -141,7 +140,7 @@ class _backState extends State<back> {
                                 title: Text(
                                   "OSM: " + item['numero_ordem'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -158,7 +157,7 @@ class _backState extends State<back> {
                                       "Tipo: " +
                                       item['tipo_manutencao'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -170,7 +169,7 @@ class _backState extends State<back> {
                                       "Sit: " +
                                       item['status'],
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 10,
                                     color: Color(0xffEE162D),
                                   ),
@@ -183,7 +182,7 @@ class _backState extends State<back> {
                                         child: Text(
                                           "Visualizar",
                                           style: TextStyle(
-                                            fontFamily: "EDP Preon",
+                                            fontFamily: "EDPPreon",
                                             fontSize: 9,
                                             color: Color(0xffffffff),
                                           ),
@@ -215,7 +214,7 @@ class _backState extends State<back> {
                                   "Nenhuma ordem finalizada foi programada para esta data.",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontFamily: "EDP Preon",
+                                    fontFamily: "EDPPreon",
                                     fontSize: 12,
                                     color: Color(0xff9E0616),
                                   ),
@@ -255,7 +254,7 @@ class _backState extends State<back> {
                 child: Text(
                   "Data de programação",
                   style: TextStyle(
-                    fontFamily: "EDP Preon",
+                    fontFamily: "EDPPreon",
                     fontSize: 13,
                     color: Color(0xffffffff),
                   ),

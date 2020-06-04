@@ -27,7 +27,7 @@ class _AdmCimState extends State<AdmCim> with SingleTickerProviderStateMixin {
         title: Text(
           "Área Administrativa",
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),
@@ -48,7 +48,7 @@ class _AdmCimState extends State<AdmCim> with SingleTickerProviderStateMixin {
           indicatorColor: Colors.white,
           labelColor: Color(0xffffffff),
           labelStyle: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 6.5,
           ),
           //controller: _tabController,

@@ -56,7 +56,7 @@ class _TrackState extends State<Track> {
           var equipe5Pos = listaPosIni[4];
           var equipe6Pos = listaPosIni[5];
 
-          print("ww" + equipe3Pos.toString());
+          //print("ww" + equipe3Pos.toString());
 
           _movimentarCamera(_posicaoCamera);
           _exibirMarcador(
@@ -176,7 +176,7 @@ class _TrackState extends State<Track> {
         title: Text(
           "Localização",
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),

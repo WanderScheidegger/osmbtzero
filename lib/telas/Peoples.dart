@@ -33,7 +33,7 @@ class _PeopleState extends State<People> {
                     Text(
                       "Carregando as ordens...",
                       style: TextStyle(
-                        fontFamily: "EDP Preon",
+                        fontFamily: "EDPPreon",
                         fontSize: 12,
                         color: Color(0xff9E0616),
                       ),
@@ -88,7 +88,7 @@ class _PeopleState extends State<People> {
                           title: Text(
                             "Nome: " + item['nome'] + " " + item['sobrenome'],
                             style: TextStyle(
-                              fontFamily: "EDP Preon",
+                              fontFamily: "EDPPreon",
                               fontSize: 15,
                               color: Color(0xff9E0616),
                             ),
@@ -96,7 +96,7 @@ class _PeopleState extends State<People> {
                           subtitle: Text(
                             "Equipe: " + item['equipe'],
                             style: TextStyle(
-                              fontFamily: "EDP Preon",
+                              fontFamily: "EDPPreon",
                               fontSize: 12,
                               color: Color(0xff9E0616),
                             ),
@@ -104,7 +104,7 @@ class _PeopleState extends State<People> {
                           trailing: Text(
                             "ADM: " + item['adm'],
                             style: TextStyle(
-                              fontFamily: "EDP Preon",
+                              fontFamily: "EDPPreon",
                               fontSize: 10,
                               color: Color(0xffEE162D),
                             ),

@@ -21,7 +21,7 @@ class _VisualizarNState extends State<VisualizarN> {
   //padrão de TextStyle
   _textStyle14() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 14,
       color: Color(0xff9E0616),
     );
@@ -30,7 +30,7 @@ class _VisualizarNState extends State<VisualizarN> {
   //padrão de TextStyle
   _textStyle12() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 12,
       color: Color(0xff9E0616),
     );
@@ -38,7 +38,7 @@ class _VisualizarNState extends State<VisualizarN> {
 
   _textStyle11() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 11,
       color: Color(0xff9E0616),
     );
@@ -58,7 +58,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "DESCRIÇÃO DAS ATIVIDADES REALIZADAS",
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 14,
                   color: Color(0xff9E0616),
                 ),
@@ -70,7 +70,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "REALIZAÇÃO: " + dados['data_realiza'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 12,
                   color: Color(0xff9E0616),
                 ),
@@ -82,7 +82,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "INÍCIO: " + dados['inicio'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -94,7 +94,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "TÉRMINO: " + dados['termino'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -106,7 +106,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "STATUS DE EXECUÇÃO: " + dados['status_exec'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -118,7 +118,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "TEMPO DE ATEND.: " + dados['tempo_atend'] + " minutos",
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -130,7 +130,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "MEDIDOR INST.: " + dados['medidor_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -142,7 +142,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "POSIÇÃO INST.: " + dados['posicao_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -154,7 +154,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "LEITURA INST.: " + dados['leitura_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -166,7 +166,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "MEDIDOR RET.: " + dados['medidor_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -178,7 +178,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "POSIÇÃO RET.: " + dados['posicao_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -190,7 +190,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "LEITURA RET.: " + dados['leitura_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -202,7 +202,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "CPU INST.: " + dados['cpu_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -214,7 +214,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "CPU RET.: " + dados['cpu_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -226,7 +226,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "CPU de CP INST.: " + dados['cpu_cp_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -238,7 +238,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "CPU de CP RET.: " + dados['cpu_cp_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -250,7 +250,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "RADIO INST.: " + dados['radio_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -262,7 +262,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "RADIO RET.: " + dados['radio_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -274,7 +274,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "DISPLAY INST.: " + dados['display_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -286,7 +286,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "DISPLAY RET.: " + dados['display_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -298,7 +298,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "SENSOR IP INST.: " + dados['ip_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -310,7 +310,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "SENSOR IP RET.: " + dados['ip_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -322,7 +322,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "CP INST.: " + dados['cp_inst'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -334,7 +334,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "CP RET.: " + dados['cp_ret'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -346,7 +346,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "Número de Clandestinas: " + dados['num_clandestinas'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -358,7 +358,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "Observ.: " + dados['obs'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -370,7 +370,7 @@ class _VisualizarNState extends State<VisualizarN> {
               child: Text(
                 "Materiais.: " + dados['materiais'],
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 11,
                   color: Color(0xff9E0616),
                 ),
@@ -386,7 +386,7 @@ class _VisualizarNState extends State<VisualizarN> {
         child: Text(
           "Carregar OSM nº " + numero,
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 17,
             color: Color(0xffffffff),
           ),
@@ -409,7 +409,7 @@ class _VisualizarNState extends State<VisualizarN> {
         }
       });
       setState(() {
-        print("NOTA: " + nota);
+        //print("NOTA: " + nota);
         dados = dataON.data;
       });
       _isLoading = true;
@@ -432,7 +432,7 @@ class _VisualizarNState extends State<VisualizarN> {
         title: Text(
           "OSM nº " + widget.ordem.nun_osm,
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),

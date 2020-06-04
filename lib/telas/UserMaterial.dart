@@ -65,7 +65,7 @@ class _UserMaterialState extends State<UserMaterial> {
   //padrão de TextStyle
   _textStyle(double size) {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: size,
       color: Color(0xff9E0616),
     );
@@ -279,7 +279,7 @@ class _UserMaterialState extends State<UserMaterial> {
                     child: Text(
                       "Listar",
                       style: TextStyle(
-                        fontFamily: "EDP Preon",
+                        fontFamily: "EDPPreon",
                         fontSize: 15,
                         color: Color(0xffffffff),
                       ),

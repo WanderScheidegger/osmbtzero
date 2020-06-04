@@ -81,7 +81,7 @@ class _EditaNotaState extends State<EditaNota> {
   //padrão de TextStyle
   _textStyle12() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 12,
       color: Color(0xff9E0616),
     );
@@ -89,7 +89,7 @@ class _EditaNotaState extends State<EditaNota> {
 
   _textStyle11() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 11,
       color: Color(0xff9E0616),
     );
@@ -210,7 +210,7 @@ class _EditaNotaState extends State<EditaNota> {
         title: Text(
           "Editar OSM nº " + widget.ordem.nun_osm,
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),
@@ -595,7 +595,7 @@ class _EditaNotaState extends State<EditaNota> {
                       child: Text(
                         "Editar",
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 15,
                           color: Color(0xffffffff),
                         ),

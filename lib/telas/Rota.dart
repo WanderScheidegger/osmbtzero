@@ -164,7 +164,7 @@ class _RotaState extends State<Rota> {
         title: Text(
           "Mapa das OSM",
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 18,
             color: Color(0xffffffff),
           ),

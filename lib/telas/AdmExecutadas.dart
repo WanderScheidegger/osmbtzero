@@ -24,7 +24,7 @@ class _AdmExecutadasState extends State<AdmExecutadas> {
                 "Você não tem conexão com a internet.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: "EDP Preon",
+                  fontFamily: "EDPPreon",
                   fontSize: 12,
                   color: Color(0xff9E0616),
                 ),
@@ -38,7 +38,7 @@ class _AdmExecutadasState extends State<AdmExecutadas> {
                   Text(
                     "Carregando as ordens...",
                     style: TextStyle(
-                      fontFamily: "EDP Preon",
+                      fontFamily: "EDPPreon",
                       fontSize: 12,
                       color: Color(0xff9E0616),
                     ),
@@ -64,7 +64,7 @@ class _AdmExecutadasState extends State<AdmExecutadas> {
                             "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 12,
                           color: Color(0xff9E0616),
                         ),
@@ -118,7 +118,7 @@ class _AdmExecutadasState extends State<AdmExecutadas> {
                               title: Text(
                                 "OSM: " + item['numero_ordem'],
                                 style: TextStyle(
-                                  fontFamily: "EDP Preon",
+                                  fontFamily: "EDPPreon",
                                   fontSize: 12,
                                   color: Color(0xff9E0616),
                                 ),
@@ -135,7 +135,7 @@ class _AdmExecutadasState extends State<AdmExecutadas> {
                                     "Tipo: " +
                                     item['tipo_manutencao'],
                                 style: TextStyle(
-                                  fontFamily: "EDP Preon",
+                                  fontFamily: "EDPPreon",
                                   fontSize: 12,
                                   color: Color(0xff9E0616),
                                 ),
@@ -147,7 +147,7 @@ class _AdmExecutadasState extends State<AdmExecutadas> {
                                     "Sit: " +
                                     item['status'],
                                 style: TextStyle(
-                                  fontFamily: "EDP Preon",
+                                  fontFamily: "EDPPreon",
                                   fontSize: 10,
                                   color: Color(0xffEE162D),
                                 ),
@@ -160,7 +160,7 @@ class _AdmExecutadasState extends State<AdmExecutadas> {
                                       child: Text(
                                         "Visualizar",
                                         style: TextStyle(
-                                          fontFamily: "EDP Preon",
+                                          fontFamily: "EDPPreon",
                                           fontSize: 9,
                                           color: Color(0xffffffff),
                                         ),

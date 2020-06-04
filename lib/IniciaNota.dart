@@ -38,7 +38,7 @@ class _IniciaNotaState extends State<IniciaNota> {
   //padrão de TextStyle
   _textStyle14() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 14,
       color: Color(0xff9E0616),
     );
@@ -46,7 +46,7 @@ class _IniciaNotaState extends State<IniciaNota> {
 
   _textStyle11() {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: 11,
       color: Color(0xff9E0616),
     );
@@ -185,7 +185,7 @@ class _IniciaNotaState extends State<IniciaNota> {
         title: Text(
           "Gerar Ordem",
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),
@@ -473,7 +473,7 @@ class _IniciaNotaState extends State<IniciaNota> {
                       child: Text(
                         "Cadastrar",
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 15,
                           color: Color(0xffffffff),
                         ),

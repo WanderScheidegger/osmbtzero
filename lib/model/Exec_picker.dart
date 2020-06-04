@@ -1,112 +1,36 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:osmbtzero/model/Ordem.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class Aexecutar extends StatefulWidget {
+import 'Ordem.dart';
+
+class ExecPicker extends StatefulWidget {
   @override
-  _AexecutarState createState() => _AexecutarState();
+  _ExecPickerState createState() => _ExecPickerState();
 }
 
-class _AexecutarState extends State<Aexecutar> {
+class _ExecPickerState extends State<ExecPicker> {
+
   static Firestore db = Firestore.instance;
+
+  static String _dataShow = '';
+  var _isVisible = true;
+
+  _dataToString(date){
+    var datalist = date.toString().split(" ")[0];
+    var datas = datalist.split("-");
+
+    return datas[2]+"/"+datas[1]+"/"+datas[0];
+
+  }
+
   static String _equipeLogado = "sem equipe";
   bool _isSemEquipe = true;
-
-
-  //ALERT DIALOG
-  static _displayDialog_Ok(BuildContext context, item) async {
-    return showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text(
-              "Tem certeza que deseja iniciar o deslocamento?",
-              style: TextStyle(
-                fontFamily: "EDPPreon",
-                fontSize: 12,
-                color: Color(0xff9E0616),
-              ),
-            ),
-            actions: <Widget>[
-              FlatButton(
-                child: Text('Iniciar'),
-                onPressed: () {
-                  DateTime time = Timestamp.now().toDate();
-                  String _timeInicio = formatDate(
-                      time, [dd, '/', mm, '/', yyyy, ' - ', H, ':', nn]);
-                  db
-                      .collection("ordens")
-                      .document(item['numero_ordem'])
-                      .updateData(
-                          {'status': 'Em execução', 'inicio': _timeInicio});
-
-                  Geolocator().getCurrentPosition(
-                      desiredAccuracy: LocationAccuracy.high
-                  ).then((Position position){
-                    Navigator.of(context).pop();
-                    _displayMapsOption(context, item, position.latitude, position.longitude);
-                  }).timeout(Duration(seconds: 5), onTimeout: () {
-                    Navigator.of(context).pop();
-                    _displayMapsOption(context, item, -20.2109753,-40.2701441);
-                  });
-                },
-              ),
-              FlatButton(
-                child: Text('Cancelar'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          );
-        });
-  }
-
-  //ALERT DIALOG
-  static _displayMapsOption(BuildContext context, item, lat, long) async {
-    return showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text(
-              "Deseja abrir o Maps com uma sugestão de rota?",
-              style: TextStyle(
-                fontFamily: "EDPPreon",
-                fontSize: 12,
-                color: Color(0xff9E0616),
-              ),
-            ),
-            actions: <Widget>[
-              FlatButton(
-                child: Text('Abrir rota'),
-                onPressed: () {
-                  launch(
-                      "https://www.google.com.br/maps/dir/$lat,$long/" +
-                          item['coordenada_x'] +
-                          "," +
-                          item['coordenada_y']);
-                  Navigator.of(context).pop();
-                },
-              ),
-              FlatButton(
-                child: Text('Cancelar'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          );
-        });
-  }
 
   StreamBuilder stream = StreamBuilder(
       stream: db
           .collection("ordens")
-          .where('status', isEqualTo: "Atribuída")
+          .where('status', isEqualTo: "Finalizada")
           .snapshots(),
       // ignore: missing_return
       builder: (context, snapshot) {
@@ -155,8 +79,8 @@ class _AexecutarState extends State<Aexecutar> {
                   children: <Widget>[
                     ListTile(
                       title: Text(
-                        "Você não tem ordens a executar ou houve um erro no carregamento. "
-                        "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
+                        "Você não tem ordens finalizadas ou houve um erro no carregamento. "
+                            "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: "EDPPreon",
@@ -172,17 +96,20 @@ class _AexecutarState extends State<Aexecutar> {
               return Expanded(
                 child: ListView.separated(
                     separatorBuilder: (context, indice) => Divider(
-                          color: Color(0xff9E0616),
-                          thickness: 0.2,
-                        ),
+                      color: Color(0xff9E0616),
+                      thickness: 0.2,
+                    ),
                     itemCount: querySnapshot.documents.length,
                     itemBuilder: (context, indice) {
 
                       //Recupara as ordens
                       List<DocumentSnapshot> ordens = querySnapshot.documents
                           .where((snapshot) =>
-                              snapshot.data['equipe'] == _equipeLogado)
+                      snapshot.data['data_programacao'] == _dataShow)
                           .toList();
+
+                      ordens = ordens.where((element) => element.data['equipe'] == _equipeLogado).toList();
+
 
                       //print("ordens:" + ordens.length.toString());
                       num++;
@@ -270,30 +197,13 @@ class _AexecutarState extends State<Aexecutar> {
                                             color: Color(0xffffffff),
                                           ),
                                         ),
-                                        color: Colors.yellow,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(6),
-                                        ),
-                                        onPressed: () {
-                                          Navigator.pushReplacementNamed(
-                                              context, "/seeorder",
-                                              arguments: ordem);
-                                        }),
-                                    RaisedButton(
-                                        child: Text(
-                                          "Iniciar deslocamento",
-                                          style: TextStyle(
-                                            fontFamily: "EDPPreon",
-                                            fontSize: 9,
-                                            color: Color(0xffffffff),
-                                          ),
-                                        ),
                                         color: Colors.green,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(6),
                                         ),
                                         onPressed: () {
-                                          _displayDialog_Ok(context, item);
+                                          Navigator.pushReplacementNamed(context, "/visualizan",
+                                              arguments: ordem);
                                         }),
                                   ],
                                 ),
@@ -311,8 +221,7 @@ class _AexecutarState extends State<Aexecutar> {
                             children: <Widget>[
                               ListTile(
                                 title: Text(
-                                  "Você não tem ordens a executar ou houve um erro no carregamento. "
-                                      "Recarregue navegando para a aba seguinte e retornando para a aba atual.",
+                                  "Nenhuma ordem finalizada foi programada para esta data.",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: "EDPPreon",
@@ -335,6 +244,7 @@ class _AexecutarState extends State<Aexecutar> {
         }
       });
 
+
   _verificaEquipe() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var eq = "";
@@ -349,17 +259,19 @@ class _AexecutarState extends State<Aexecutar> {
       setState(() {
         _isSemEquipe = false;
       });
-    }else{
+    } else {
       setState(() {
         _isSemEquipe = true;
       });
     }
   }
 
-
   @override
   void initState() {
     _verificaEquipe();
+    setState(() {
+      _dataShow = _dataToString(DateTime.now());
+    });
     super.initState();
   }
 
@@ -369,29 +281,45 @@ class _AexecutarState extends State<Aexecutar> {
       padding: EdgeInsets.all(5),
       child: Column(
         children: <Widget>[
-          Visibility(
-            visible: _isSemEquipe,
-            child: stream,
-            replacement: Card(
-              elevation: 8,
-              color: Color(0xffB5B6B3),
-              borderOnForeground: true,
-              child: Column(
-                children: <Widget>[
-                  ListTile(
-                    title: Text(
-                      "Você ainda não foi atribuído a uma equipe. Por favor, entre em contato com a administração.",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: "EDPPreon",
-                        fontSize: 12,
-                        color: Color(0xff9E0616),
-                      ),
-                    ),
+          Padding(
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            child: RaisedButton(
+                child: Text(
+                  "Data de programação",
+                  style: TextStyle(
+                    fontFamily: "EDPPreon",
+                    fontSize: 13,
+                    color: Color(0xffffffff),
                   ),
-                ],
-              ),
-            ),
+                ),
+                color: Color(0xffEE162D),
+                padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                onPressed: () {
+                  setState(() {
+                    _isVisible = !_isVisible;
+                  });
+
+                  showDatePicker(
+                      context: context,
+                      initialDate: DateTime.now(),
+                      firstDate: DateTime(2019),
+                      lastDate: DateTime(2030)
+                  ).then((date){
+                    setState(() {
+                      _dataShow = _dataToString(date);
+                      _isVisible = !_isVisible;
+                    });
+
+                  });
+
+                }),
+          ),
+          Visibility(
+            visible: _isVisible,
+            child: stream,
           ),
         ],
       ),

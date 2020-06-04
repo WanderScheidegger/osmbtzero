@@ -128,7 +128,7 @@ class _AddMaterialState extends State<AddMaterial> {
     Map<String, dynamic> materiais = Map();
     for (var i in quantidades) {
       var sp = i.split(":");
-      print("dados " + sp.toString());
+      //print("dados " + sp.toString());
       materiais[sp[0]] = double.parse(sp[1]);
     }
     return materiais;
@@ -146,7 +146,7 @@ class _AddMaterialState extends State<AddMaterial> {
         .getDocuments()
         .then((QuerySnapshot snapshot) {
       snapshot.documents.forEach((f) {
-        print("DDDDD: " + f.data.toString());
+        //print("DDDDD: " + f.data.toString());
         if (f.documentID == _equipe) {
           setState(() {
             _cs = f.data['cs'] + _quantidades['CS'];
@@ -261,14 +261,14 @@ class _AddMaterialState extends State<AddMaterial> {
 
 
       }).timeout(Duration(seconds: 10), onTimeout: (){
-        print("timeou equipamentos");
+        //print("timeou equipamentos");
         pr.hide();
       });
 
 
 
     }).timeout(Duration(seconds: 10), onTimeout: (){
-      print("timeou materiais");
+      //print("timeou materiais");
       pr.hide();
     });
 
@@ -325,7 +325,7 @@ class _AddMaterialState extends State<AddMaterial> {
   //padrão de TextStyle
   _textStyle(double size) {
     return TextStyle(
-      fontFamily: "EDP Preon",
+      fontFamily: "EDPPreon",
       fontSize: size,
       color: Color(0xff9E0616),
     );
@@ -429,7 +429,7 @@ class _AddMaterialState extends State<AddMaterial> {
         title: Text(
           "Atribuir Material",
           style: TextStyle(
-            fontFamily: "EDP Preon",
+            fontFamily: "EDPPreon",
             fontSize: 20,
             color: Color(0xffffffff),
           ),
@@ -817,7 +817,7 @@ class _AddMaterialState extends State<AddMaterial> {
                       child: Text(
                         "Atribuir",
                         style: TextStyle(
-                          fontFamily: "EDP Preon",
+                          fontFamily: "EDPPreon",
                           fontSize: 15,
                           color: Color(0xffffffff),
                         ),
