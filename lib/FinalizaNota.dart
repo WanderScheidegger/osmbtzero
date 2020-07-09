@@ -45,6 +45,9 @@ class _FinalizaNotaState extends State<FinalizaNota> {
   bool _isVisibleMateriais = false;
   bool _isVisibleClandestinas = false;
 
+  bool _isVisibleProblemas = false;
+  bool _isVisibleAgravantes = false;
+
   String _textoVisOrdem = "Visualizar os dados da ordem";
   String _textoVisMedidor = "\n Clique aqui para editar MEDIDOR";
   String _textoVisCpu = "\n Clique aqui para editar CPU de Cs";
@@ -60,6 +63,12 @@ class _FinalizaNotaState extends State<FinalizaNota> {
   String _textoVisClandestinas = "\n Clique aqui para editar CLANDESTINAS";
 
   String _textoVisCpuCps = "\n Clique aqui para editar CPU de CP";
+  String _textoVisProlemas = "\n Clique aqui para editar os PROBLEMAS encontrados";
+  String _textoVisAgravantes = "\n Clique aqui para editar os AGRAVANTES";
+
+
+  String _hintProblemas = "Problema Encontrado";
+  String _hintAgravantes = "Agravantes";
 
   String _textoMateriais = "RAMAL:0.0\n"
       "CABO IP:0.0\n"
@@ -89,6 +98,7 @@ class _FinalizaNotaState extends State<FinalizaNota> {
   String _hintCpuCpInst = "Cpu de CP instalada";
 
   String _preenchidos = "";
+
 
   TextEditingController _controllerLeitMedInst = TextEditingController();
   TextEditingController _controllerPosMedInst = TextEditingController();
@@ -644,6 +654,9 @@ class _FinalizaNotaState extends State<FinalizaNota> {
     nota.material_alca = alca.toString();
     nota.material_cintabap3 = cintab.toString();
 
+    nota.problemas = _hintProblemas;
+    nota.agravantes = _hintAgravantes;
+
     Firestore db = Firestore.instance;
 
     db
@@ -1001,6 +1014,22 @@ class _FinalizaNotaState extends State<FinalizaNota> {
     if ( clandestinas==0 && _isVisibleClandestinas ) {
       setState(() {
         _preenchidos = _preenchidos + "- CLANDESTINAS retiradas -";
+      });
+    }
+    //--------------------------------------------------------------------------
+
+    //PROBLEMAS
+    if ( _hintProblemas=="Problema Encontrado" && _isVisibleProblemas ) {
+      setState(() {
+        _preenchidos = _preenchidos + "- PROBLEMAS -";
+      });
+    }
+    //--------------------------------------------------------------------------
+
+    //AGRAVANTES
+    if ( _hintAgravantes=="Agravantes" && _isVisibleAgravantes ) {
+      setState(() {
+        _preenchidos = _preenchidos + "- AGRAVANTES -";
       });
     }
     //--------------------------------------------------------------------------
@@ -2470,6 +2499,142 @@ class _FinalizaNotaState extends State<FinalizaNota> {
                                           ),
                                         ),
                                       ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+
+                      //--------------------- Problemas ----------------------
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Divider(
+                              thickness: 0.5,
+                              color: Color(0xffB5B6B3),
+                            ),
+                            GestureDetector(
+                              child: Text(
+                                _textoVisProlemas,
+                                style: _textStyle14(),
+                                textAlign: TextAlign.center,
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  _isVisibleProblemas =
+                                  !_isVisibleProblemas;
+                                });
+                              },
+                            ),
+                            Visibility(
+                              visible: _isVisibleProblemas,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 10),
+                                    child: DropdownButton<String>(
+                                      elevation: 15,
+                                      icon: Icon(Icons.arrow_drop_down_circle),
+                                      hint: Text(
+                                        _hintProblemas,
+                                        style: _textStyle14(),
+                                      ),
+                                      items: <String>["CPU Travada", "CPU Defeituosa", "CPU Queimada",
+                                        "Rádio Travado", "Rádio Queimado", "Rádio c/ baixa frequência",
+                                        "Formigas nos componentes", "Placa eletrônica avariada",
+                                        "Medidor c/ relé travado", "Medidor c/ borne queimado",
+                                        "Medidor folgado na CS", "Medidor c/ placa queimada",
+                                        "Concentrador Queimado", "WPP avariado", "Cabo armado avariado",
+                                        "Problema de conexão", "Antena Quebrada", "Remota ruim", "SSN ruim",
+                                        "CPU CP ruim", "Outros"]
+                                          .map((String value) {
+                                        return new DropdownMenuItem<String>(
+                                          value: value,
+                                          child: new Text(
+                                            value,
+                                            style: _textStyle12(),
+                                          ),
+                                        );
+                                      }).toList(),
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _hintProblemas = value;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      //--------------------- Agravantes ----------------------
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Divider(
+                              thickness: 0.5,
+                              color: Color(0xffB5B6B3),
+                            ),
+                            GestureDetector(
+                              child: Text(
+                                _textoVisAgravantes,
+                                style: _textStyle14(),
+                                textAlign: TextAlign.center,
+                              ),
+                              onTap: () {
+                                setState(() {
+                                  _isVisibleAgravantes =
+                                  !_isVisibleAgravantes;
+                                });
+                              },
+                            ),
+                            Visibility(
+                              visible: _isVisibleAgravantes,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 10),
+                                    child: DropdownButton<String>(
+                                      elevation: 15,
+                                      icon: Icon(Icons.arrow_drop_down_circle),
+                                      hint: Text(
+                                        _hintAgravantes,
+                                        style: _textStyle14(),
+                                      ),
+                                      items: <String>["Abelhas \ Marimbondo", "Clandestina na IP", "Clandestina no Seal Tube",
+                                        "Clandestina na bucha \n do transformador", "Blindagem rompida", "Risco de queda do concentrador",
+                                        "Deteriorização do concentrador", "Poda", "Risco de curto circuito",  "Risco à vida", "Outros"]
+                                          .map((String value) {
+                                        return new DropdownMenuItem<String>(
+                                          value: value,
+                                          child: new Text(
+                                            value,
+                                            style: _textStyle12(),
+                                          ),
+                                        );
+                                      }).toList(),
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _hintAgravantes = value;
+                                        });
+                                      },
                                     ),
                                   ),
                                 ],

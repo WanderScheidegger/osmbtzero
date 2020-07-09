@@ -50,6 +50,8 @@ class Nota{
   String _material_rele;
   String _material_alca;
   String _material_cintabap3;
+  String _problemas;
+  String _agravantes;
 
 
 
@@ -101,7 +103,9 @@ class Nota{
       "placaele": this._material_placaele,
       "rele": this._material_rele,
       "alca": this._material_alca,
-      "cintab": this._material_cintabap3
+      "cintab": this._material_cintabap3,
+      "problemas": this._problemas,
+      "agravantes": this._agravantes
 
     };
     return map;
@@ -109,6 +113,12 @@ class Nota{
 
   Nota();
 
+
+  String get problemas => _problemas;
+
+  set problemas(String value) {
+    _problemas = value;
+  }
 
   String get eq_exec => _eq_exec;
 
@@ -392,5 +402,9 @@ class Nota{
     _cpu_cp_ret = value;
   }
 
+  String get agravantes => _agravantes;
 
+  set agravantes(String value) {
+    _agravantes = value;
+  }
 }
